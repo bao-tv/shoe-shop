@@ -1,0 +1,20 @@
+.footer{
+    font-weight: bold;
+    .item{
+        margin-bottom: 1rem;
+        border-right: 1px solid $gray-400;
+        @include mobile {
+            border-bottom: 1px solid $gray-400;
+            border-right: none;
+        }
+        p{
+            margin-bottom: 0.25rem !important;
+            font-weight: 500;
+        }
+    }
+}
+.bottom{
+    height: 50px;
+    background-color: $gray-300;
+    width: 100%;
+}

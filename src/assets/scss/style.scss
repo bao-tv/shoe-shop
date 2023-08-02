@@ -1,0 +1,17 @@
+//base
+@import './base/base';
+@import "~bootstrap/scss/bootstrap.scss";
+
+//component
+@import './components/header';
+@import './components/footer';
+@import './components/ProductCard/productCard';
+@import './components//Button/button';
+
+// pages
+@import './pages/Home/home';
+@import './pages/Detail/detail';
+@import './pages/Cart/cart';
+@import './pages/Profile/_profile';
+@import './pages/Profile/OrderHistory/_orderHistory';
+@import './pages/Search/search';

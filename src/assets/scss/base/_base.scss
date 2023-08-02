@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$color-linear: linear-gradient(180deg, rgba(189,41,134,1) 20%, rgba(27,26,146,1) 100%);
+$color-white: #fff;
+$color-black: #000;
+$color-backgroud-secondary: rgb(226, 224, 224);
+$color-text: #353535;
+$color-text-secondary: #918f8f;
+
+$mobile-width: 480px; 
+$tablet-width: 768px; 
+$desktop-width: 1024px; 
+
+@mixin mobile { @media (max-width: #{$mobile-width - 1px}) {     
+    @content;   
+   } 
+  }  
+  
+  @mixin tablet { @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {       
+     @content;   
+   } 
+  }  
+  
+  @mixin desktop {   @media (min-width: #{$desktop-width}) {     
+    @content;  
+   } 
+  }

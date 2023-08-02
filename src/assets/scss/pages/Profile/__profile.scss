@@ -1,0 +1,45 @@
+.profile{
+    h3 {
+        background: $color-linear;
+        color: $color-white;
+        width: 50%;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+    .container{
+        .left {
+            justify-content: center;
+            display: flex;
+            img{
+                height: 200px;
+                object-fit: contain;
+            }
+        }
+        .right {
+            .form-group{
+                margin-bottom: 0.5rem;
+                p{
+                    margin-bottom: 0.25rem;
+                }
+                .gender{
+                    input {
+                        margin: 0 0.5rem;
+                    }
+                }
+            }
+        }
+        >.orders_history{
+            margin-left: -0.75rem;
+            margin-right: -0.75rem;
+            span{
+                color: $pink-400;
+                font-size: 4rem;
+                border: 1px solid $gray-300;
+                border-top: none;
+                margin-top: 1rem;
+                padding: 0 24px 12px 24px;
+                margin-bottom: 0.75rem;
+            }
+        }
+    }
+}
