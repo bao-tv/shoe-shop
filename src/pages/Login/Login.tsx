@@ -4,7 +4,8 @@ import * as yub from 'yup';
 import { loginAsynApi, loginFacebookApi } from '../../redux/UserReducer/userReducer';
 import { DispatchType, Rootstate } from '../../redux/configStore';
 import { useDispatch, useSelector } from 'react-redux';
-import FacebookLogin from 'react-facebook-login';
+// import FacebookLogin from 'react-facebook-login';
+import FacebookLogin from '@greatsumini/react-facebook-login';
  
 export type UserLoginModel = {
   email:string,
@@ -33,7 +34,9 @@ export default function Login({}: Props) {
 
   const {userLogin} = useSelector((state:Rootstate) => state.userReducer);
 
-  const responseFacebook = (response:any) => {    
+  const responseFacebook = (response:any) => {   
+    console.log('response: ', response);
+     
     if(response?.accessToken) {
       const actionThunk = loginFacebookApi(response.accessToken);
       dispatch(actionThunk);
@@ -63,13 +66,22 @@ export default function Login({}: Props) {
             <button className="btn btn-success" type='submit'>Login</button>
           </div>
           <div className="form-group mt-2">
-            <FacebookLogin
+            {/* <FacebookLogin
               appId="801757588088168"
               autoLoad={true}
               fields="name,email,picture"
               callback={responseFacebook}
               cssClass="btn btn-primary"
-              icon="fa-facebook"/>
+              icon="fa-facebook"/> */}
+            <FacebookLogin
+              appId="660852102627536"
+              onSuccess={responseFacebook}
+              onFail={(error) => {
+                console.log('Login Failed!', error);
+              }}
+              onProfileSuccess={(response) => {
+                console.log('Login onProfileSuccess!', response);}}
+            />
           </div>
         </div>
       </div>

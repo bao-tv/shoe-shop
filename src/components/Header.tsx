@@ -10,7 +10,7 @@ type Props = {};
 export default function Header(props: Props) {
   const dispatch: DispatchType = useDispatch();
   const navigate = useNavigate();
-  const { userLogin } = useSelector((state: Rootstate) => state.userReducer);
+  const { userProfile, userLogin } = useSelector((state: Rootstate) => state.userReducer);
   const { carts } = useSelector((state: Rootstate) => state.cartReducer);
   const numItem: number = carts.length;
   const [show, setShow] = useState<boolean>(false);
@@ -44,7 +44,7 @@ export default function Header(props: Props) {
           </div>
           <div className="login flex-item">
               <NavLink className={"login-link"} to={"/login"}>
-                {userLogin ? userLogin.email : "Login"}
+                {userLogin ? userProfile?.name : "Login"}
               </NavLink>
               {userLogin && (
                 <div className="user-select position-absolute">
@@ -105,7 +105,7 @@ export default function Header(props: Props) {
           </div>
           <div className="login flex-item" onClick={handleClose}>
               <NavLink className={"login-link"} to={"/login"}>
-                {userLogin ? userLogin.email : "Login"}
+                {userLogin ? userProfile?.name : "Login"}
               </NavLink>
               {userLogin && (
                 <div className="user-select">
