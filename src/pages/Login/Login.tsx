@@ -74,7 +74,7 @@ export default function Login({}: Props) {
               cssClass="btn btn-primary"
               icon="fa-facebook"/> */}
             <FacebookLogin
-              appId="660852102627536"
+              appId="1802238896925474"
               onSuccess={responseFacebook}
               onFail={(error) => {
                 console.log('Login Failed!', error);
