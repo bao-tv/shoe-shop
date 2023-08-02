@@ -36,6 +36,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement 
 );
 root.render(
+  <React.StrictMode>
   <Provider store={store}>
     <HistoryRouter history={history}>
         <Routes>
@@ -54,5 +55,7 @@ root.render(
         </Routes>
     </HistoryRouter>
   </Provider>
+
+  </React.StrictMode>
 );
  
