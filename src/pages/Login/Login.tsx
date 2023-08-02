@@ -5,7 +5,6 @@ import { loginAsynApi, loginFacebookApi } from '../../redux/UserReducer/userRedu
 import { DispatchType, Rootstate } from '../../redux/configStore';
 import { useDispatch, useSelector } from 'react-redux';
 import FacebookLogin from 'react-facebook-login';
-// import facebookLogin from 'react-facebook-login';
  
 export type UserLoginModel = {
   email:string,
