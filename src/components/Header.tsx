@@ -93,17 +93,17 @@ export default function Header(props: Props) {
           <button onClick={handleClose}><i className="bi bi-x-lg"></i></button>
         </Offcanvas.Header>
         <Offcanvas.Body>
-        <div className="search flex-item">
+          <div className="search flex-item" onClick={handleClose}>
             <NavLink className={"search-link"} to={"/search"}>
               <i className="bi bi-search"></i>Search
             </NavLink>
           </div>
-          <div className="carts flex-item">
+          <div className="carts flex-item" onClick={handleClose}>
             <NavLink className={"carts-link"} to={"/carts"}>
               <i className="bi bi-cart-check"></i>({numItem})
             </NavLink>
           </div>
-          <div className="login flex-item">
+          <div className="login flex-item" onClick={handleClose}>
               <NavLink className={"login-link"} to={"/login"}>
                 {userLogin ? userLogin.email : "Login"}
               </NavLink>
@@ -119,7 +119,7 @@ export default function Header(props: Props) {
                 </div>
               )}
           </div>
-          <div className="register flex-item">
+          <div className="register flex-item" onClick={handleClose}>
             <NavLink className={"register-link"} to={"/register"}>
               Register
             </NavLink>
