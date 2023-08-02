@@ -27,7 +27,6 @@ import {
   Navigate, 
 } from 'react-router-dom';
 import { history } from './util/config';
-import * as dayjs from 'dayjs';
 
 interface CustomRouterProps {
   history: History;
