@@ -14,10 +14,6 @@ export default function Header(props: Props) {
   const { carts } = useSelector((state: Rootstate) => state.cartReducer);
   const numItem: number = carts.length;
   const [show, setShow] = useState<boolean>(false);
-
-  console.log("userLogin", userLogin);
-  console.log("userProfile", userProfile);
-  
   
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

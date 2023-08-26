@@ -7,6 +7,7 @@ type Props = {
 
 export default function OrderHistory({ordersHistory}: Props) {
     const dayjs = require('dayjs');
+    console.log(ordersHistory);
     
   return (
     <div className='order_history'>
@@ -17,12 +18,10 @@ export default function OrderHistory({ordersHistory}: Props) {
                     <table className='table'>
                         <thead>
                             <tr>
-                                <th>id</th>
-                                <th>img</th>
-                                <th>name</th>
-                                <th>price</th>
-                                <th>quantity</th>
-                                <th>total</th>
+                                <th>ID</th>
+                                <th>Img</th>
+                                <th>Name</th>
+                                <th>Price</th>
                             </tr>
                         </thead>
                     {item.orderDetail.map((item_Detail:OrderDetail, index: number) => {
@@ -33,8 +32,6 @@ export default function OrderHistory({ordersHistory}: Props) {
                                     <td><img src={item_Detail.image} alt={item_Detail.alias} /></td>
                                     <td>{item_Detail.name}</td>
                                     <td>{item_Detail.price}</td>
-                                    <td>{item_Detail.quantity}</td>
-                                    <td>{item_Detail.price * item_Detail.quantity}</td>
                                 </tr>
                             </tbody>
                         )

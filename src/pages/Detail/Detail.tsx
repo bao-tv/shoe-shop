@@ -80,7 +80,7 @@ export default function Detail({}: Props) {
           <div onClick={addToCart}><Button name={'Add to cart'} /></div>
         </div>
       </div>
-      <h3>-Reakate product-</h3>
+      <h3>-Relate product-</h3>
       <div className="row">
         {productDetail?.relatedProducts.map((prod: RelatedProduct,index:number) => {
           return (
