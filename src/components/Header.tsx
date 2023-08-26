@@ -14,6 +14,10 @@ export default function Header(props: Props) {
   const { carts } = useSelector((state: Rootstate) => state.cartReducer);
   const numItem: number = carts.length;
   const [show, setShow] = useState<boolean>(false);
+
+  console.log("userLogin", userLogin);
+  console.log("userProfile", userProfile);
+  
   
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -44,7 +48,7 @@ export default function Header(props: Props) {
           </div>
           <div className="login flex-item">
               <NavLink className={"login-link"} to={"/login"}>
-                {userLogin ? userProfile?.name : "Login"}
+                {userLogin ? (userProfile?.name ? userProfile?.name : userLogin?.email) : "Login"}
               </NavLink>
               {userLogin && (
                 <div className="user-select position-absolute">

@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useFormik } from "formik";
 import * as yub from 'yup';
 import { loginAsynApi, loginFacebookApi } from '../../redux/UserReducer/userReducer';
-import { DispatchType, Rootstate } from '../../redux/configStore';
-import { useDispatch, useSelector } from 'react-redux';
-// import FacebookLogin from 'react-facebook-login';
+import { DispatchType } from '../../redux/configStore';
+import { useDispatch } from 'react-redux';
 import FacebookLogin from '@greatsumini/react-facebook-login';
  
 export type UserLoginModel = {
@@ -32,17 +31,14 @@ export default function Login({}: Props) {
     }
   });
 
-  const {userLogin} = useSelector((state:Rootstate) => state.userReducer);
+  // const {userProfile} = useSelector((state:Rootstate) => state.userReducer);
 
-  const responseFacebook = (response:any) => {   
-    console.log('response: ', response);
-     
+  const responseFacebook = (response:any) => {
     if(response?.accessToken) {
       const actionThunk = loginFacebookApi(response.accessToken);
       dispatch(actionThunk);
     }
   }
-  
   return (
     <form className='container' onSubmit={formLogin.handleSubmit}>
       <div className="d-flex justify-content-center align-items-center">
@@ -66,21 +62,16 @@ export default function Login({}: Props) {
             <button className="btn btn-success" type='submit'>Login</button>
           </div>
           <div className="form-group mt-2">
-            {/* <FacebookLogin
-              appId="801757588088168"
-              autoLoad={true}
-              fields="name,email,picture"
-              callback={responseFacebook}
-              cssClass="btn btn-primary"
-              icon="fa-facebook"/> */}
             <FacebookLogin
-              appId="1802238896925474"
+              appId="744044704077470"
               onSuccess={responseFacebook}
+              initParams={{
+                version: 'v16.0',
+                xfbml: true,
+              }}
               onFail={(error) => {
                 console.log('Login Failed!', error);
               }}
-              onProfileSuccess={(response) => {
-                console.log('Login onProfileSuccess!', response);}}
             />
           </div>
         </div>

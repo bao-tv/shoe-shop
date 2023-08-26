@@ -77,7 +77,10 @@ const userReducer = createSlice({
 
     //   xử lý profile
     builder.addCase(getProfileAsynApi.fulfilled, (state:UserState, action:PayloadAction<UserProfile>) => {
-        state.userProfile = action.payload;
+        // console.log(action.payload);
+        
+        // state.userProfile = action.payload;
+        return {...state, userProfile : action.payload}
     });
 
     builder.addCase(loginFacebookApi.fulfilled , (state:UserState, action:PayloadAction<UserLoginResult>) => {

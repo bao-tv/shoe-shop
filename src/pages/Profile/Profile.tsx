@@ -81,10 +81,6 @@ export default function Profile({}: Props) {
     })
   },[userProfile]);
 
-  console.log(frmUserProfile.values);
-  
-  
-
   const dispatch:DispatchType = useDispatch();
   useEffect(() => {
     //gọi api get profile
