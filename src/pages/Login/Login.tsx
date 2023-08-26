@@ -31,8 +31,6 @@ export default function Login({}: Props) {
     }
   });
 
-  // const {userProfile} = useSelector((state:Rootstate) => state.userReducer);
-
   const responseFacebook = (response:any) => {
     if(response?.accessToken) {
       const actionThunk = loginFacebookApi(response.accessToken);

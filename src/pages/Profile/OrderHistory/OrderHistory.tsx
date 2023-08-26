@@ -7,9 +7,10 @@ type Props = {
 
 export default function OrderHistory({ordersHistory}: Props) {
     const dayjs = require('dayjs');
+    
   return (
     <div className='order_history'>
-        {ordersHistory?.map((item: OrdersHistory, index: number) => {
+        {ordersHistory?.map((item: OrdersHistory, index: number) => {           
             return (
                 <div key={index}>
                     <p>Orders have been placed on {dayjs(item.date).format('DD/MM/YYYY')}</p>

@@ -1,5 +1,5 @@
-import { useFormik, Field, Form } from 'formik';
-import React, { useEffect, useState } from 'react';
+import { useFormik} from 'formik';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { DispatchType, Rootstate } from '../../redux/configStore'
@@ -155,7 +155,7 @@ export default function Profile({}: Props) {
             </form>
           </div>
         </div>
-      <div className="orders_history d-none">
+      <div className="orders_history">
         <span>Order history</span>
         <OrderHistory ordersHistory={userProfile?.ordersHistory} />
       </div>
